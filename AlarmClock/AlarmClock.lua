@@ -183,6 +183,8 @@ end
 local lastTicks = nil  
 local function CheckTime()
 
+	if _settings.enabled == false then return end
+	
 	local ticks = GetSecondsSinceMidnight()
 	
 	if lastTicks == ticks then return end
