@@ -1,6 +1,8 @@
 # EsoAlarmClock v0.0.2
 An addon for The Elder Scrolls Online for displaying a notification at a particular time. The duration and interval between notifications can be optionally configured.
+
 The notification is displayed in the standard notification areas in the center of the screen,the top right hand corner of the screen and the chat window.
+
 Alarms are stored in the SavedVariables config file to preserve alarms between game sessions. Alarms are cleared once they have been triggered.
 
 Installation
