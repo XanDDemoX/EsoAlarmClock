@@ -148,7 +148,9 @@ end
 local function ShowAlert(...)
 	local arg,count = Pack(...)
 	if count < 1 then return end 
-	ZO_Alert(UI_ALERT_CATEGORY_ALERT,0,table.concat(arg," "))
+	local msg = table.concat(arg," ")
+	CENTER_SCREEN_ANNOUNCE:DisplayMessage(CSA_EVENT_LARGE_TEXT,0,msg)
+	ZO_Alert(UI_ALERT_CATEGORY_ALERT,0,msg)
 end
 
 local function SetTimeouts(func,interval,duration)
