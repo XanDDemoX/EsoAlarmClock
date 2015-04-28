@@ -21,7 +21,7 @@ For example:
 Usage
 =============
 
-* /alarm set hour:min messageString [durationMinutes] [intervalSeconds] - Set an alarm at the specified time. Optionally the duration (1-5 minutes) and interval (5-60 seconds) can also be set.
+* /alarm set hour:min [messageString] [durationMinutes] [intervalSeconds] - Set an alarm at the specified time. Optionally a message, the duration (1-5 minutes) and interval (5-60 seconds) can also be set.
 * /alarm set 15:30 Example Alarm 2 10 - Example sets an alarm at 15:30 with the text "Example Alarm" which will be displayed every 10 seconds for 2 minutes.
 
 * /alarm clear hour:min - Clears the alarm at the specified time.
