@@ -6,7 +6,7 @@ Alarms are stored in the SavedVariables config file to preserve alarms between g
 Installation
 =============
 
-Place the "Recharge" folder in your addons folder:
+Place the "AlarmClock" folder in your addons folder:
 
 "Documents\Elder Scrolls Online\live\Addons"
 
