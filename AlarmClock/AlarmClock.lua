@@ -1,5 +1,5 @@
 -----------------------------------
---    Alarm Clock Version 0.0.1  --
+--    Alarm Clock Version 0.0.2  --
 -----------------------------------
 
 local _prefix ="[Alarm Clock]: "
@@ -89,7 +89,7 @@ local function SetAlarm(strTime,...)
 	
 	local arg,count = Pack(...)
 
-	local iparsed,interval = TryParseNumber(arg[count],1,60,15)
+	local iparsed,interval = TryParseNumber(arg[count],5,60,15)
 	local dparsed,duration = TryParseNumber(arg[count-1],1,5)
 	
 	if iparsed == true then table.remove(arg) end
@@ -158,7 +158,26 @@ local function SetTimeouts(func,interval,duration)
 	repeat 
 		zo_callLater(func,v)
 		v = v + interval
-	until v >= duration
+	until v > duration
+end
+
+local function TriggerAlarm(strTime,alarm)
+	if alarm ~= nil then
+		
+		ClearAlarm(strTime,true)
+		
+		local msg ="["..strTime.."] "..alarm.message
+		
+		local func = function()
+			ShowAlert(msg)
+			d(_prefix..msg)
+		end
+
+		SetTimeouts(func, alarm.interval * 1000, alarm.duration * 60000)
+		
+		func()
+		
+	end
 end
 
 local lastTicks = nil  
@@ -174,20 +193,7 @@ local function CheckTime()
 	
 	if alarm ~= nil then
 		local strTime = GetTimeString(hour,mins)
-		
-		ClearAlarm(strTime,true)
-		
-		local msg ="["..strTime.."] "..alarm.message
-		
-		local func = function()
-			ShowAlert(msg)
-			d(_prefix..msg)
-		end
-
-		SetTimeouts(func, alarm.interval * 1000, alarm.duration * 60000)
-		
-		func()
-		
+		TriggerAlarm(strTime,alarm)
 	end
 
 end
