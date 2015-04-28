@@ -145,10 +145,10 @@ local function TryGetAlarm(hour,mins)
 	return alarm
 end
 
-local function ShowAlert(message,sound)
-	if message == nil then return end 
-	sound = tonumber(sound) or 0
-	ZO_Alert(UI_ALERT_CATEGORY_ALERT,sound,message)
+local function ShowAlert(...)
+	local arg,count = Pack(...)
+	if count < 1 then return end 
+	ZO_Alert(UI_ALERT_CATEGORY_ALERT,0,table.concat(arg," "))
 end
 
 local function SetTimeouts(func,interval,duration)
