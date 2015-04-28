@@ -1,0 +1,6 @@
+## Title: Alarm Clock v0.0.1
+## Version 0.0.1
+## APIVersion: 100011
+## SavedVariables: AlarmClock_SavedVariables
+
+AlarmClock.lua
