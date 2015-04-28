@@ -1,5 +1,5 @@
-## Title: Alarm Clock v0.0.2
-## Version 0.0.2
+## Title: Alarm Clock v0.0.3
+## Version 0.0.3
 ## APIVersion: 100011
 ## SavedVariables: AlarmClock_SavedVariables
 
